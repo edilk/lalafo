@@ -1,10 +1,12 @@
 package kg.test.lalafo.model;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@RequiredArgsConstructor
 public class Ad {
 
     private String imageUrl;

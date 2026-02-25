@@ -6,5 +6,5 @@ import lombok.Data;
 public class AdImage {
 
     private String originalUrl;
-    private boolean isMain;
+    private Boolean isMain;
 }

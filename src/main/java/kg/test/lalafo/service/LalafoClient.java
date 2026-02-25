@@ -21,7 +21,7 @@ public class LalafoClient {
         headers.set("User-Agent", "Mozilla/5.0");
         headers.set("Accept", "application/json");
         headers.set("device", "pc");
-        headers.set("country-id", "12");
+        headers.set("Country-Id", "12");
         headers.set("language", "ru_RU");
         headers.set("referer", "https://lalafo.kg");
 
@@ -34,6 +34,8 @@ public class LalafoClient {
                         entity,
                         AdResponse.class
                 );
+
+        System.out.println("Response getBody: " + response.getBody());
 
         return response.getBody();
     }

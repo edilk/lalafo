@@ -24,6 +24,10 @@ public class AdService {
 
         AdResponse response = client.fetchAds();
 
+        System.out.println("Response: " + response);
+
+        System.out.println("Items size: " + response.getItems().size());
+
         return response.getItems()
                 .stream()
                 .limit(100)
@@ -35,14 +39,14 @@ public class AdService {
 
         String imageUrl = item.getImages()
                 .stream()
-                .filter(img -> Boolean.TRUE.equals(img.getIsMain()))
+                .filter(img -> Boolean.TRUE.equals(img.getIs_main()))
                 .findFirst()
-                .map(AdImage::getOriginalUrl)
+                .map(AdImage::getOriginal_url)
                 .orElse(null);
 
         String priceTxt = item.getPrice() + " " + item.getCurrency();
 
-        LocalDateTime date = Instant.ofEpochSecond(item.getCreateAt())
+        LocalDateTime date = Instant.ofEpochSecond(item.getCreated_time())
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
 

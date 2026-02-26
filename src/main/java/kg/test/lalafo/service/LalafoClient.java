@@ -13,7 +13,7 @@ public class LalafoClient {
 
     private final RestTemplate template = new RestTemplate();
 
-    private static final String URL = "https://lalafo.kg/api/search/v3/feed?expand=url&page=1&per-page=100";
+    private static final String URL = "https://lalafo.kg/api/search/v3/ads?expand=url&page=1&per-page=200&m-name=last_push_up";
 
     public AdResponse fetchAds() {
 
